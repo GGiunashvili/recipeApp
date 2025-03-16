@@ -1,22 +1,22 @@
 import { useState, useEffect } from "react";
 import FoodList from "./FoodList";
-const URL = "https://api.spoonacular.com/recipes/complexSearch";
-const API_KEY = "4083b1ed5c8a4a74a02b304995eced78";
+
+const URL = "https://www.themealdb.com/api/json/v1/1/search.php"; // TheMealDB search API
 
 interface SearchProps {
-  foodData: any[]; // Replace `any` with the specific type of your food data
-  setFoodData: React.Dispatch<React.SetStateAction<any[]>>; // Replace `any` with the specific type
+  foodData: any[];
+  setFoodData: React.Dispatch<React.SetStateAction<any[]>>;
 }
 
 export default function Search({ foodData, setFoodData }: SearchProps) {
-  const [query, setQuery] = useState("pizza");
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     async function fetchFood() {
-      const res = await fetch(`${URL}?query=${query}&apiKey=${API_KEY}`);
+      const res = await fetch(`${URL}?s=${query}`); // Use 's' for searching by meal name
       const data = await res.json();
-      console.log(data.results);
-      setFoodData(data.results || []); // Update foodData with API results
+      console.log(data.meals); // Check the data for the available meals
+      setFoodData(data.meals || []); // Update foodData with API results
     }
     fetchFood();
   }, [query, setFoodData]);
@@ -29,7 +29,10 @@ export default function Search({ foodData, setFoodData }: SearchProps) {
         onChange={(e) => setQuery(e.target.value)} // Controlled input
         placeholder="Search for food..."
       />
-      <FoodList foodData={foodData} />
+      <div style={{ display: "flex" }}>
+        <FoodList foodData={foodData} />
+        <h1>hello</h1>
+      </div>
     </div>
   );
 }
