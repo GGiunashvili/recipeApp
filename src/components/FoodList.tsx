@@ -10,7 +10,7 @@ export default function FoodList({ foodData }: { foodData: any[] }) {
             alt="food image"
           />
 
-          <button onClick={(e) => console.log(item.idMeal)}>view recipe</button>
+          <button onClick={() => console.log(item.idMeal)}>view recipe</button>
         </li>
       ))}
     </ul>
