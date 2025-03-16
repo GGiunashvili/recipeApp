@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function FoodList({ foodData }: { foodData: any[] }) {
   return (
     <ul>
