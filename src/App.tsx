@@ -15,13 +15,19 @@ function App() {
   return (
     <>
       <h1>hi</h1>
-      <Search
-        foodId={foodId}
-        setFoodId={setFoodId}
-        foodData={foodData}
-        setFoodData={setFoodData}
-      />
-      <FoodDetails foodId={foodId} />
+      <div style={{ display: "flex" }}>
+        <Search
+          foodId={foodId}
+          setFoodId={setFoodId}
+          foodData={foodData}
+          setFoodData={setFoodData}
+        />
+        <div
+          style={{ width: "100px", height: "100px", backgroundColor: "red" }}
+        >
+          <FoodDetails foodId={foodId} />
+        </div>
+      </div>
     </>
   );
 }

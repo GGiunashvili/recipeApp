@@ -27,7 +27,7 @@ export default function Search({
     async function fetchFood() {
       const res = await fetch(`${URL}?s=${query}`); // Use 's' for searching by meal name
       const data = await res.json();
-      console.log(data.meals); // Check the data for the available meals
+      // console.log(data.meals); // Check the data for the available meals
       setFoodData(data.meals || []); // Update foodData with API results
     }
     fetchFood();
