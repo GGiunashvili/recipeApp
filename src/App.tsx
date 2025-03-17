@@ -1,21 +1,11 @@
 import { useState } from "react";
 import "./App.css";
 import Search from "./components/Search";
-
+import FoodDetails from "./components/FoodDetails";
 interface FoodItem {
   id: number;
   title: string;
   image: string;
-}
-
-interface NameProps {
-  foodId: string;
-  setFoodId: React.Dispatch<React.SetStateAction<string>>;
-}
-
-interface FoodDataProps {
-  foodData: FoodItem[];
-  setFoodData: React.Dispatch<React.SetStateAction<FoodItem[]>>;
 }
 
 function App() {
@@ -31,6 +21,7 @@ function App() {
         foodData={foodData}
         setFoodData={setFoodData}
       />
+      <FoodDetails foodId={foodId} />
     </>
   );
 }

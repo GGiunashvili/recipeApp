@@ -1,6 +1,5 @@
 export default function FoodList({
   foodData,
-  foodId,
   setFoodId,
 }: {
   foodData: any[];
