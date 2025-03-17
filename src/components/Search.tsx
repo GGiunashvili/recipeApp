@@ -3,12 +3,24 @@ import FoodList from "./FoodList";
 
 const URL = "https://www.themealdb.com/api/json/v1/1/search.php"; // TheMealDB search API
 
-interface SearchProps {
+interface NameProps {
+  foodId: string;
+  setFoodId: React.Dispatch<React.SetStateAction<string>>;
+}
+
+interface FoodDataProps {
   foodData: any[];
   setFoodData: React.Dispatch<React.SetStateAction<any[]>>;
 }
 
-export default function Search({ foodData, setFoodData }: SearchProps) {
+type SearchProps = NameProps & FoodDataProps; // Combine both interfaces
+
+export default function Search({
+  foodId,
+  setFoodId,
+  foodData,
+  setFoodData,
+}: SearchProps) {
   const [query, setQuery] = useState("");
 
   useEffect(() => {
@@ -30,8 +42,8 @@ export default function Search({ foodData, setFoodData }: SearchProps) {
         placeholder="Search for food..."
       />
       <div style={{ display: "flex" }}>
-        <FoodList foodData={foodData} />
-        <h1>hello</h1>
+        <FoodList foodId={foodId} setFoodId={setFoodId} foodData={foodData} />
+        <h1>{foodId}</h1>
       </div>
     </div>
   );

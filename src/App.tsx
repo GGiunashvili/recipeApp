@@ -8,13 +8,29 @@ interface FoodItem {
   image: string;
 }
 
+interface NameProps {
+  foodId: string;
+  setFoodId: React.Dispatch<React.SetStateAction<string>>;
+}
+
+interface FoodDataProps {
+  foodData: FoodItem[];
+  setFoodData: React.Dispatch<React.SetStateAction<FoodItem[]>>;
+}
+
 function App() {
   const [foodData, setFoodData] = useState<FoodItem[]>([]); // Explicitly define the type
+  const [foodId, setFoodId] = useState<string>("");
 
   return (
     <>
       <h1>hi</h1>
-      <Search foodData={foodData} setFoodData={setFoodData} />
+      <Search
+        foodId={foodId}
+        setFoodId={setFoodId}
+        foodData={foodData}
+        setFoodData={setFoodData}
+      />
     </>
   );
 }
