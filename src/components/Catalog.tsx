@@ -11,7 +11,7 @@ export default function Catalog({ foodData, setFoodId }: CatalogProps) {
   return (
     <>
       <h1 className="mb-[20px]">menu</h1>
-      <div className="flex flex-col gap-[10px] overflow-scroll h-[calc(100vh-100px)] ">
+      <div className="flex flex-col gap-[10px] overflow-scroll h-[290px] lg:h-[calc(100vh-150px)] mb-[20px]">
         {foodData.map((item: any) => {
           const handleClick = () => setFoodId(item.idMeal);
           // Define the handler inline within the map callback

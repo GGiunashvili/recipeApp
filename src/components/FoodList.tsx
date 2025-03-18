@@ -8,12 +8,12 @@ export default function FoodList({
 }) {
   return (
     <>
-      <ul>
+      <ul className="grid grid-cols-12 gap-[20px]">
         {foodData.map((item: any, index: number) => {
           const handleClick = () => setFoodId(item.idMeal); // Define the handler inline within the map callback
           return (
             <li
-              className="max-w-[250px] w-fit mx-auto flex gap-[10px] flex-col justify-center items-center border mb-4 pb-[20px] pt-0 rounded-xl overflow-hidden border-gray-300"
+              className="col-span-6 lg:col-span-12  w-full lg:w-auto mx-auto flex gap-[10px] flex-col justify-center items-center border  pb-[20px] pt-0 rounded-xl overflow-hidden border-gray-300"
               key={index}
             >
               <img
