@@ -30,7 +30,7 @@ function App() {
           </div>
         </div>
 
-        <div className="col-span-12 lg:col-span-3 mb-[60px] lg:mb-[0px] pt-[20px]">
+        <div className="grid gap-[40px] lg:gap-x-[0] grid-cols-12 col-span-12 lg:col-span-3 mb-[60px] lg:mb-[0px] pt-[20px]">
           <FoodList foodId={foodId} setFoodId={setFoodId} foodData={foodData} />
         </div>
         <div className="col-span-12 lg:col-span-8 w-full">
