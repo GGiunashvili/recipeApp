@@ -24,7 +24,7 @@ function App() {
             foodData={foodData}
             setFoodData={setFoodData}
           />
-          <Catalog foodData={foodData} />
+          <Catalog foodData={foodData} setFoodId={setFoodId} />
         </div>
 
         <div className="col-span-3">

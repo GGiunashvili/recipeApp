@@ -5,16 +5,27 @@ interface FoodItem {
 }
 interface CatalogProps {
   foodData: FoodItem[];
+  setFoodId: (name: string) => void;
 }
-export default function Catalog({ foodData }: CatalogProps) {
+export default function Catalog({ foodData, setFoodId }: CatalogProps) {
   return (
     <div className=" text-start h-full bg-red-100">
       <div className="sticky top-0">
         <h1>menu</h1>
-        {foodData.map((item: any) => {
-          // Define the handler inline within the map callback
-          return <p>{item.strMeal}</p>;
-        })}
+        <div className="flex flex-col gap-[10px]">
+          {foodData.map((item: any) => {
+            const handleClick = () => setFoodId(item.idMeal);
+            // Define the handler inline within the map callback
+            return (
+              <button
+                className="bg-purple-400 text-white p-[8px] rounded-md hover:cursor-pointer"
+                onClick={handleClick}
+              >
+                {item.strMeal}
+              </button>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
