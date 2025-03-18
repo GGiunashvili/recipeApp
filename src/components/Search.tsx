@@ -43,7 +43,6 @@ export default function Search({
       />
       <div style={{ display: "flex" }}>
         <FoodList foodId={foodId} setFoodId={setFoodId} foodData={foodData} />
-        <h1>{foodId}</h1>
       </div>
     </div>
   );

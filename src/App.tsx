@@ -10,7 +10,7 @@ interface FoodItem {
 
 function App() {
   const [foodData, setFoodData] = useState<FoodItem[]>([]); // Explicitly define the type
-  const [foodId, setFoodId] = useState<string>("");
+  const [foodId, setFoodId] = useState<string>("53086");
 
   return (
     <>

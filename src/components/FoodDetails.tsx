@@ -12,7 +12,8 @@ export default function FoodDetails({ foodId }: FoodDetailsProps) {
     async function fetchFood() {
       const res = await fetch(`${url}?i=${foodId}`);
       const data = await res.json();
-      setFud(data.meals ? data.meals[0] : null);
+      setFud(data.meals?.[0] || undefined);
+      console.log(data.meals);
     }
 
     fetchFood();
@@ -21,7 +22,11 @@ export default function FoodDetails({ foodId }: FoodDetailsProps) {
   return (
     <div>
       <h1>{foodId}</h1>
-      <h1>{fud ? fud.strMeal : "Food not found"}</h1>
+      <h1>{fud?.strMeal}</h1>
+      <h1>{fud ? fud.strIngredient1 : "Food not found"}</h1>
+      <h1>{fud ? fud.strIngredient2 : "Food not found"}</h1>
+      <h1>{fud ? fud.strIngredient3 : "Food not found"}</h1>
+      <img src={fud?.strMealThumb} alt={fud?.strMeal} />
     </div>
   );
 }
