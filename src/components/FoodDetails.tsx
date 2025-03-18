@@ -35,7 +35,7 @@ export default function FoodDetails({ foodId }: FoodDetailsProps) {
   };
 
   return (
-    <div className="col-span-8 relative h-full bg-purple-100">
+    <div className="col-span-8 relative h-full">
       <div className="sticky top-0 overflow-scroll h-screen">
         <div className="flex items-left mb-[40px]">
           <img

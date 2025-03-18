@@ -17,14 +17,16 @@ function App() {
   return (
     <>
       <div className="grid grid-cols-12">
-        <div className="col-span-1">
-          <Search
-            foodId={foodId}
-            setFoodId={setFoodId}
-            foodData={foodData}
-            setFoodData={setFoodData}
-          />
-          <Catalog foodData={foodData} setFoodId={setFoodId} />
+        <div className="col-span-1 h-full">
+          <div className="sticky top-0">
+            <Search
+              foodId={foodId}
+              setFoodId={setFoodId}
+              foodData={foodData}
+              setFoodData={setFoodData}
+            />
+            <Catalog foodData={foodData} setFoodId={setFoodId} />
+          </div>
         </div>
 
         <div className="col-span-3">
