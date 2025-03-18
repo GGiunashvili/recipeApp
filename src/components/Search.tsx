@@ -34,7 +34,7 @@ export default function Search({
   }, [query, setFoodData]);
 
   return (
-    <div className="col-span-5">
+    <div className="col-span-3">
       <input
         className="mb-[20px] border max-w-[250px] w-full"
         type="text"

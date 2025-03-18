@@ -24,7 +24,7 @@ export default function FoodList({
               <p>{item.strMeal}</p>
 
               <button
-                className="bg-purple-400 text-white p-[8px] rounded-md"
+                className="bg-purple-400 text-white p-[8px] rounded-md hover:cursor-pointer"
                 onClick={handleClick}
               >
                 view recipe
