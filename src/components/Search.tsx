@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import FoodList from "./FoodList";
 
 const URL = "https://www.themealdb.com/api/json/v1/1/search.php"; // TheMealDB search API
 
@@ -15,12 +14,7 @@ interface FoodDataProps {
 
 type SearchProps = NameProps & FoodDataProps; // Combine both interfaces
 
-export default function Search({
-  foodId,
-  setFoodId,
-  foodData,
-  setFoodData,
-}: SearchProps) {
+export default function Search({ setFoodData }: SearchProps) {
   const [query, setQuery] = useState("");
 
   useEffect(() => {
