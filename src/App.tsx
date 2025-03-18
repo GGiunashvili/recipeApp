@@ -12,7 +12,8 @@ interface FoodItem {
 
 function App() {
   const [foodData, setFoodData] = useState<FoodItem[]>([]); // Explicitly define the type
-  const [foodId, setFoodId] = useState<string>("53086");
+  // 53086 loading
+  const [foodId, setFoodId] = useState<string>("");
 
   return (
     <>

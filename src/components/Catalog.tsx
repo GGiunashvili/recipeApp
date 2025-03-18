@@ -10,7 +10,7 @@ interface CatalogProps {
 export default function Catalog({ foodData, setFoodId }: CatalogProps) {
   return (
     <>
-      <h1>menu</h1>
+      <h1 className="mb-[20px]">menu</h1>
       <div className="flex flex-col gap-[10px] overflow-scroll h-[calc(100vh-100px)] ">
         {foodData.map((item: any) => {
           const handleClick = () => setFoodId(item.idMeal);

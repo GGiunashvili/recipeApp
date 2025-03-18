@@ -24,7 +24,52 @@ export default function FoodDetails({ foodId }: FoodDetailsProps) {
     if (foodId) fetchFood();
   }, [foodId]);
 
-  if (!fud) return <p>Loading...</p>;
+  if (!fud)
+    return (
+      // loading
+      <div className="col-span-8 w-full">
+        <div className="sticky top-0 overflow-scroll h-screen">
+          <div className=" mx-auto text-justify">
+            <h1 className="text-center text-purple-700 text-3xl mb-[40px]">
+              Welcome!
+            </h1>
+
+            <p className="text-lg text-gray-700 mb-6">
+              We warmly welcome you to our vibrant and exciting world of
+              cooking! Here, you'll find a vast collection of recipes from all
+              around the globe, ready for you to explore.
+            </p>
+
+            <h2 className="text-3xl text-purple-600 mt-8 mb-4">
+              Discover Your Favorite Dish
+            </h2>
+            <p className="text-lg text-gray-700 mb-6">
+              On our site, you can select your{" "}
+              <span className="text-red-500 font-bold">desired dish</span> and
+              learn step-by-step how to prepare it. Whether you’re a beginner or
+              an experienced chef, we’ve got something for everyone.
+            </p>
+
+            <h2 className="text-3xl text-purple-600 mt-8 mb-4">Why Cooking?</h2>
+            <p className="text-lg text-gray-700 mb-6">
+              Cooking isn’t just about preparing food – it’s about creating
+              memories. It’s about experimenting, having fun, and sharing love
+              with every meal. Our recipes will help you enhance your culinary
+              skills while enjoying the process!
+            </p>
+
+            <h2 className="text-3xl text-purple-600 mt-8 mb-4">
+              Happy Cooking!
+            </h2>
+            <p className="text-lg text-gray-700 mb-6">
+              We wish you success in finding the perfect recipe. Let the cooking
+              journey begin, and don’t forget to add your personal touch. Enjoy
+              your time in the kitchen and treat yourself with delicious dishes!
+            </p>
+          </div>
+        </div>
+      </div>
+    );
 
   const youtubeEmbedUrl = fud?.strYoutube
     ? fud.strYoutube.replace("watch?v=", "embed/")
