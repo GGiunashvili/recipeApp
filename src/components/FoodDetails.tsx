@@ -6,6 +6,7 @@ interface FoodDetailsProps {
 
 export default function FoodDetails({ foodId }: FoodDetailsProps) {
   const [fud, setFud] = useState<any>(null);
+  const [expanded, setExpanded] = useState<{ [key: string]: boolean }>({});
   const url = "https://www.themealdb.com/api/json/v1/1/lookup.php";
 
   useEffect(() => {
@@ -29,8 +30,12 @@ export default function FoodDetails({ foodId }: FoodDetailsProps) {
     ? fud.strYoutube.replace("watch?v=", "embed/")
     : "";
 
+  const toggleExpand = (key: string) => {
+    setExpanded((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
+
   return (
-    <div className="col-span-8 relative h-full bg-purple-100  ">
+    <div className="col-span-8 relative h-full bg-purple-100">
       <div className="sticky top-0 overflow-scroll h-screen">
         <div className="flex items-left mb-[40px]">
           <img
@@ -56,9 +61,23 @@ export default function FoodDetails({ foodId }: FoodDetailsProps) {
                 )}
               </div>
             </div>
+
             <div className="text-start">
-              <p className=" text-2xl mb-[8px]">Cooking Instructions</p>
-              <p className="mb-[30px]">{fud?.strInstructions}</p>
+              <p className="text-2xl mb-[8px]">Cooking Instructions</p>
+              <p className="mb-[30px]">
+                {fud?.strInstructions.length > 500 && !expanded["instructions"]
+                  ? fud.strInstructions.slice(0, 500) + "..."
+                  : fud?.strInstructions}
+                {fud?.strInstructions.length > 500 && (
+                  <span
+                    onClick={() => toggleExpand("instructions")}
+                    className="text-blue-500 underline"
+                  >
+                    {expanded["instructions"] ? "See Less" : "See More"}
+                  </span>
+                )}
+              </p>
+
               <p className="whitespace-nowrap">{fud?.strArea} Dish</p>
             </div>
           </div>

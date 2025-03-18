@@ -11,7 +11,7 @@ export default function Catalog({ foodData }: CatalogProps) {
     <div className="col-span-1 text-start h-full bg-red-100">
       <div className="sticky top-0">
         <h1>menu</h1>
-        {foodData.map((item: any, index: number) => {
+        {foodData.map((item: any) => {
           // Define the handler inline within the map callback
           return <p>{item.strMeal}</p>;
         })}
