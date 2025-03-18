@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Search from "./components/Search";
 import FoodDetails from "./components/FoodDetails";
+
 interface FoodItem {
   id: number;
   title: string;
@@ -14,19 +15,15 @@ function App() {
 
   return (
     <>
-      <h1>hi</h1>
-      <div style={{ display: "flex" }}>
+      <div className="grid grid-cols-12">
         <Search
           foodId={foodId}
           setFoodId={setFoodId}
           foodData={foodData}
           setFoodData={setFoodData}
         />
-        <div
-          style={{ width: "100px", height: "100px", backgroundColor: "red" }}
-        >
-          <FoodDetails foodId={foodId} />
-        </div>
+
+        <FoodDetails foodId={foodId} />
       </div>
     </>
   );

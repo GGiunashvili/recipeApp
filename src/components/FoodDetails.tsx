@@ -20,7 +20,7 @@ export default function FoodDetails({ foodId }: FoodDetailsProps) {
   }, [foodId]);
 
   return (
-    <div>
+    <div className="col-span-6">
       <h1>{foodId}</h1>
       <h1>{fud?.strMeal}</h1>
       <h1>{fud ? fud.strIngredient1 : "Food not found"}</h1>

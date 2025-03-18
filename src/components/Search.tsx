@@ -34,7 +34,7 @@ export default function Search({
   }, [query, setFoodData]);
 
   return (
-    <div>
+    <div className="col-span-6">
       <input
         type="text"
         value={query}
