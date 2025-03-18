@@ -8,7 +8,7 @@ interface CatalogProps {
 }
 export default function Catalog({ foodData }: CatalogProps) {
   return (
-    <div className="col-span-1 text-start h-full bg-red-100">
+    <div className=" text-start h-full bg-red-100">
       <div className="sticky top-0">
         <h1>menu</h1>
         {foodData.map((item: any) => {

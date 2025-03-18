@@ -3,6 +3,7 @@ import "./App.css";
 import Search from "./components/Search";
 import FoodDetails from "./components/FoodDetails";
 import Catalog from "./components/Catalog";
+import FoodList from "./components/FoodList";
 interface FoodItem {
   id: number;
   title: string;
@@ -16,14 +17,19 @@ function App() {
   return (
     <>
       <div className="grid grid-cols-12">
-        <Catalog foodData={foodData} />
+        <div className="col-span-1">
+          <Search
+            foodId={foodId}
+            setFoodId={setFoodId}
+            foodData={foodData}
+            setFoodData={setFoodData}
+          />
+          <Catalog foodData={foodData} />
+        </div>
 
-        <Search
-          foodId={foodId}
-          setFoodId={setFoodId}
-          foodData={foodData}
-          setFoodData={setFoodData}
-        />
+        <div className="col-span-3">
+          <FoodList foodId={foodId} setFoodId={setFoodId} foodData={foodData} />
+        </div>
 
         <FoodDetails foodId={foodId} />
       </div>
