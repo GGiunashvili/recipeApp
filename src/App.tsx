@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Search from "./components/Search";
 import FoodDetails from "./components/FoodDetails";
-
+import Catalog from "./components/Catalog";
 interface FoodItem {
   id: number;
   title: string;
@@ -16,13 +16,7 @@ function App() {
   return (
     <>
       <div className="grid grid-cols-12">
-        <div className="col-span-1 text-start">
-          <h1>menu</h1>
-          {foodData.map((item: any, index: number) => {
-            // Define the handler inline within the map callback
-            return <p>{item.strMeal}</p>;
-          })}
-        </div>
+        <Catalog foodData={foodData} />
 
         <Search
           foodId={foodId}
