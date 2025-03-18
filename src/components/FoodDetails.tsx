@@ -27,7 +27,7 @@ export default function FoodDetails({ foodId }: FoodDetailsProps) {
   if (!fud)
     return (
       // loading
-      <div className="sticky top-0 overflow-scroll h-screen">
+      <div className="sticky top-0 overflow-scroll h-screen pt-[20px]">
         <div className=" mx-auto text-justify">
           <h1 className="text-center text-purple-700 text-3xl mb-[40px]">
             Welcome!
@@ -77,7 +77,7 @@ export default function FoodDetails({ foodId }: FoodDetailsProps) {
 
   return (
     <div className="col-span-12 lg:col-span-8 relative lg:h-full">
-      <div className="sticky top-0 lg:overflow-scroll lg:h-screen">
+      <div className="sticky top-0 lg:overflow-scroll lg:h-screen pt-[20px]">
         <div className="flex flex-col lg:flex-row items-left mb-[40px]">
           <img
             className="max-w-[400px] max-h-[400px] mx-auto"
@@ -124,9 +124,9 @@ export default function FoodDetails({ foodId }: FoodDetailsProps) {
           </div>
         </div>
 
-        <div className="relative pb-[56.25%] w-full h-full">
+        <div className="text-left">
           <iframe
-            className="absolute top-0 left-0 lg:relative w-full h-full"
+            className="w-full h-[400px]"
             src={youtubeEmbedUrl}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

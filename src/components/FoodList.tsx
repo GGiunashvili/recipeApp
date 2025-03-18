@@ -8,7 +8,7 @@ export default function FoodList({
 }) {
   return (
     <>
-      <ul className="grid grid-cols-12 gap-[20px]">
+      <ul className="grid grid-cols-12 gap-[40px]">
         {foodData.map((item: any, index: number) => {
           const handleClick = () => setFoodId(item.idMeal); // Define the handler inline within the map callback
           return (

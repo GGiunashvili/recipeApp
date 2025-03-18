@@ -17,9 +17,9 @@ function App() {
 
   return (
     <>
-      <div className="grid grid-cols-12">
+      <div className="max-w-[1920px] m-auto px-[16px] grid grid-cols-12">
         <div className="col-span-12 h-full lg:col-span-1 mb-[20px] lg:mb-[0px]">
-          <div className="sticky top-0">
+          <div className="sticky top-0 pt-[16px]">
             <Search
               foodId={foodId}
               setFoodId={setFoodId}
@@ -30,7 +30,7 @@ function App() {
           </div>
         </div>
 
-        <div className="col-span-12 lg:col-span-3 mb-[60px] lg:mb-[0px]">
+        <div className="col-span-12 lg:col-span-3 mb-[60px] lg:mb-[0px] pt-[20px]">
           <FoodList foodId={foodId} setFoodId={setFoodId} foodData={foodData} />
         </div>
         <div className="col-span-12 lg:col-span-8 w-full">
