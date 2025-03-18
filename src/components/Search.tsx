@@ -34,16 +34,16 @@ export default function Search({
   }, [query, setFoodData]);
 
   return (
-    <div className="col-span-6">
+    <div className="col-span-5">
       <input
+        className="mb-[20px] border max-w-[250px] w-full"
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)} // Controlled input
         placeholder="Search for food..."
       />
-      <div style={{ display: "flex" }}>
-        <FoodList foodId={foodId} setFoodId={setFoodId} foodData={foodData} />
-      </div>
+
+      <FoodList foodId={foodId} setFoodId={setFoodId} foodData={foodData} />
     </div>
   );
 }

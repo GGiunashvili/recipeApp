@@ -12,14 +12,23 @@ export default function FoodList({
         {foodData.map((item: any, index: number) => {
           const handleClick = () => setFoodId(item.idMeal); // Define the handler inline within the map callback
           return (
-            <li key={index}>
-              <p>{item.strMeal}</p>
+            <li
+              className="max-w-[250px] w-fit mx-auto flex gap-[10px] flex-col justify-center items-center border mb-4 pb-[20px] pt-0 rounded-xl overflow-hidden border-gray-300"
+              key={index}
+            >
               <img
-                style={{ width: "100px" }}
+                className="max-w-[250px]"
                 src={item.strMealThumb}
                 alt="food image"
               />
-              <button onClick={handleClick}>view recipe</button>
+              <p>{item.strMeal}</p>
+
+              <button
+                className="bg-purple-400 text-white p-[8px] rounded-md"
+                onClick={handleClick}
+              >
+                view recipe
+              </button>
             </li>
           );
         })}

@@ -20,13 +20,16 @@ export default function FoodDetails({ foodId }: FoodDetailsProps) {
   }, [foodId]);
 
   return (
-    <div className="col-span-6">
-      <h1>{foodId}</h1>
-      <h1>{fud?.strMeal}</h1>
-      <h1>{fud ? fud.strIngredient1 : "Food not found"}</h1>
-      <h1>{fud ? fud.strIngredient2 : "Food not found"}</h1>
-      <h1>{fud ? fud.strIngredient3 : "Food not found"}</h1>
-      <img src={fud?.strMealThumb} alt={fud?.strMeal} />
+    <div className="col-span-6 h-full bg-purple-100">
+      <div className="sticky top-0">
+        {/* <h1>{foodId}</h1> */}
+
+        <img src={fud?.strMealThumb} alt={fud?.strMeal} />
+        <h1>{fud?.strMeal}</h1>
+        <h1>{fud ? fud.strIngredient1 : "Food not found"}</h1>
+        <h1>{fud ? fud.strIngredient2 : "Food not found"}</h1>
+        <h1>{fud ? fud.strIngredient3 : "Food not found"}</h1>
+      </div>
     </div>
   );
 }

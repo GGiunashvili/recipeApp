@@ -16,6 +16,14 @@ function App() {
   return (
     <>
       <div className="grid grid-cols-12">
+        <div className="col-span-1 text-start">
+          <h1>menu</h1>
+          {foodData.map((item: any, index: number) => {
+            // Define the handler inline within the map callback
+            return <p>{item.strMeal}</p>;
+          })}
+        </div>
+
         <Search
           foodId={foodId}
           setFoodId={setFoodId}
