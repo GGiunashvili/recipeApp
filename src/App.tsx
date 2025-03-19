@@ -20,12 +20,7 @@ function App() {
       <div className="max-w-[1920px] m-auto px-[16px] grid grid-cols-12">
         <div className="col-span-12 h-full lg:col-span-1 mb-[20px] lg:mb-[0px]">
           <div className="sticky top-0 pt-[16px]">
-            <Search
-              foodId={foodId}
-              setFoodId={setFoodId}
-              foodData={foodData}
-              setFoodData={setFoodData}
-            />
+            <Search foodData={foodData} setFoodData={setFoodData} />
             <Catalog foodData={foodData} setFoodId={setFoodId} />
           </div>
         </div>

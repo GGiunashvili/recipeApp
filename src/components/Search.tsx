@@ -2,19 +2,12 @@ import { useState, useEffect } from "react";
 
 const URL = "https://www.themealdb.com/api/json/v1/1/search.php"; // TheMealDB search API
 
-interface NameProps {
-  foodId: string;
-  setFoodId: React.Dispatch<React.SetStateAction<string>>;
-}
-
 interface FoodDataProps {
   foodData: any[];
   setFoodData: React.Dispatch<React.SetStateAction<any[]>>;
 }
 
-type SearchProps = NameProps & FoodDataProps; // Combine both interfaces
-
-export default function Search({ setFoodData }: SearchProps) {
+export default function Search({ setFoodData }: FoodDataProps) {
   const [query, setQuery] = useState("");
 
   useEffect(() => {

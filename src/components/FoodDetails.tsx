@@ -8,7 +8,7 @@ export default function FoodDetails({ foodId }: FoodDetailsProps) {
   const [fud, setFud] = useState<any>(null);
   const [expanded, setExpanded] = useState<{ [key: string]: boolean }>({});
   const url = "https://www.themealdb.com/api/json/v1/1/lookup.php";
-
+  // https://www.themealdb.com/api/json/v1/1/lookup.php?i=53086
   useEffect(() => {
     async function fetchFood() {
       try {
